@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ozharko/Desktop/CPP/day00/subject/ex01/Contact.class.cpp
+pb.h
+/Users/ozharko/Desktop/CPP/day00/subject/ex01/pb.h
+
+/Users/ozharko/Desktop/CPP/day00/subject/ex01/main.cpp
+pb.h
+/Users/ozharko/Desktop/CPP/day00/subject/ex01/pb.h
+iostream
+-
+iomanip
+-
+
+/Users/ozharko/Desktop/CPP/day00/subject/ex01/pb.h
+iostream
+-
+
