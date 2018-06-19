@@ -15,6 +15,9 @@
 # define PB_H
 
 #include <iostream>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 class Contact
 {
@@ -23,9 +26,9 @@ public:
 	~Contact();
 
 	void		add_contact(void);
-	void		showbrief(void); // original
-	// void	showfull(void);
-	void		showtruncate(std::string str); // orighinal
+	void		preview(void);
+	void		allinfo(void);
+	void		normalsize(std::string str);
 
 	int				set;
 	std::string		firstname;

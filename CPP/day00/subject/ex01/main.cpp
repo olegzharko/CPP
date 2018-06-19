@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "pb.h"
-#include <iostream>
-#include <string>
-#include <iomanip>
 
 void				prompt_add(Contact *tab)
 {
@@ -32,65 +29,31 @@ void				prompt_add(Contact *tab)
 
 void	prompt_search(Contact *tab)
 {
-	std::string		number;
-	int				index;
-
+	std::string		index;
+	int 			i;
+	
 	std::cout << "     Index|First Name| Last Name| Nick Name" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (i = 0; tab[i].set == 1; i++)
 	{
-		tab[i].showbrief();
+		std::cout << std::setfill (' ') << std::setw (10) << i + 1 << "|";
+		tab[i].preview();
 	}
-	// std::cout << "Enter an index: ";
-	// std::getline (std::cin, number);
-	// if (number.size() == 1 && number[0] > 48 && number[0] < 57)
-	// {
-	// 		index = number[0] - 49;
-	// 		tab[index].showfull();
-	// }
-	// else
-	// 	std::cout << "Error: Please Enter a valid Index." << std::endl;
-}
-
-/*
-void	cheakwidth(std::string str)
-{
-	std::string	tmp;
-
-	tmp = str;
-	if (tmp.size() > 10)
+	std::cout << "INDEX NUM: ";
+	std::getline (std::cin, index);
+	if (index[0] >= '1' && index[0] <= '8' && index[1] == '\0')
 	{
-		tmp = tmp.substr(0, 9) + ".";
+		tab[index[0] - '1'].allinfo();
 	}
-	std::cout << tmp;
+	else
+		std::cout << "\"ERROR: Invalid cell.\"" << std::endl;
 }
-*/
-
-/*
-void				prompt_search(Contact *tab)
-{
-	int				i;
-
-	std::cout << "     Index|First Name| Last Name| Nick Name" << std::endl;
-	i = 0;
-	while (tab[i].set == 1)
-	{
-		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << std::setw(10) << tab[i].firstname << "|";
-		std::cout << std::setw(10) << tab[i].lastname << "|";
-		std::cout << std::setw(10) << tab[i].nickname << std::endl;
-		i++;
-	}
-
-
-}
-*/
 
 int					main(void)
 {
 	Contact			tab[8];
 	std::string		line;
 
-	std::cout << "PhoneBook 3000" << std::endl << "Available command: ADD, SEARCH and EXIT" << std::endl << "Enter a command: ";
+	std::cout << "PHONEBOOK 3000" << std::endl << "Available command: ADD, SEARCH and EXIT" << std::endl << "COMMAND: ";
 	std::getline(std::cin, line);
 	while (line != "EXIT")
 	{
@@ -99,12 +62,12 @@ int					main(void)
 		else if (line == "SEARCH")
 			prompt_search(tab);
 		else
-			std::cout << std::endl << "Error: Please Enter available command." << std::endl;
+			std::cout << "ERROR: Invalid command." << std::endl;
 		std::cout << "Available command: ";
 		if (tab[7].set != 1)
 			std::cout << "ADD, ";
-		std::cout << "SEARCH and EXIT" << std::endl << "Enter a command: ";
+		std::cout << "SEARCH and EXIT" << std::endl << "COMMAND: ";
 		std::getline(std::cin, line);
-        std::cout << "LOADING..." << std::endl;
 	}
+	return 0;
 }

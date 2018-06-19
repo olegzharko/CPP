@@ -18,52 +18,73 @@ Contact::~Contact() {}
 
 void		Contact::add_contact(void)
 {
-	std::cout << "Enter firstname: ";
+	std::cout << "  *Firstname:.......";
 	std::getline (std::cin, firstname);
-	std::cout << "Enter lastname: ";
+	std::cout << "  *Lastname:........";
 	std::getline (std::cin, lastname);
-	std::cout << "Enter nickname: ";
+	std::cout << "  *Nickname:........";
 	std::getline (std::cin, nickname);
-	std::cout << "Enter login: ";
+	std::cout << "  *Login:...........";
 	std::getline (std::cin, login);
-	std::cout << "Enter postal address: ";
+	std::cout << "  *Postal address:..";
 	std::getline (std::cin, address);
-	std::cout << "Enter email: ";
+	std::cout << "  *Email:...........";
 	std::getline (std::cin, email);
-	std::cout << "Enter phone number: ";
+	std::cout << "  *Phone number:....";
 	std::getline (std::cin, phone);
-	std::cout << "Enter birthday: ";
+	std::cout << "  *Birthday:........";
 	std::getline (std::cin, birthday);
-	std::cout << "Enter favorite meal: ";
+	std::cout << "  *Favorite meal:...";
 	std::getline (std::cin, meal);
-	std::cout << "Enter underwear color: ";
+	std::cout << "  *Underwear color:.";
 	std::getline (std::cin, underwear);
-	std::cout << "Enter darkest secret: ";
+	std::cout << "  *Darkest secret:..";
 	std::getline (std::cin, secret);
 }
 
-
-void	Contact::showtruncate(std::string str)
+void	Contact::allinfo(void)
 {
-	char	buffer[11];
+	if (set == 0)
+		std::cout << "\"ERROR: The cell is empty.\"" << std::endl;
+	else
+	{
+		std::cout << "ALL INFO:           " << std::endl;
+		std::cout << "  *Firstname:......." << firstname << std::endl;
+		std::cout << "  *Lastname:........" << lastname << std::endl;
+		std::cout << "  *Nickname:........" << nickname << std::endl;
+		std::cout << "  *Login:..........." << login << std::endl;
+		std::cout << "  *Postal Address:.." << address << std::endl;
+		std::cout << "  *Email:..........." << email << std::endl;
+		std::cout << "  *Phone Number:...." << phone << std::endl;
+		std::cout << "  *Birthday:........" << birthday << std::endl;
+		std::cout << "  *Favorite Meal:..." << meal << std::endl;
+		std::cout << "  *Underwear Color:." << underwear << std::endl;
+		std::cout << "  *Darkest Secret:.." << secret << std::endl;
+	}
+}
 
+void	Contact::normalsize(std::string str)
+{
+	char	tmp[11];
+		
+	std::cout << std::setfill (' ') << std::setw (10);
 	if (str.size() > 10)
 	{
-		str.copy(buffer, 9, 0);
-		buffer[9]='.';
-		buffer[10]='\0';
-		std::cout << buffer;
+		str.copy(tmp, 9, 0);
+		tmp[9]='.';
+		tmp[10]='\0';
+		std::cout << std::setw (10) << tmp;
 	}
 	else
 		std::cout << str;
 }
 
-void	Contact::showbrief(void)
+void	Contact::preview(void)
 {
-	showtruncate(firstname);
+	normalsize(firstname);
 	std::cout << "|";
-	showtruncate(lastname);
+	normalsize(lastname);
 	std::cout << "|";
-	showtruncate(nickname);
+	normalsize(nickname);
 	std::cout << std::endl;
 }

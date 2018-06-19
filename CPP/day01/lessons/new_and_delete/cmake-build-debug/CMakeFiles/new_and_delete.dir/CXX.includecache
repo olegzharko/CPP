@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/new1.cpp
+
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/new2.cpp
+
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/ref1.cpp
+
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/ref2.cpp
+
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/ref3.cpp
+iostream
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/iostream
+string
+/Users/ozharko/Desktop/CPP/day01/lessons/new_and_delete/string
+

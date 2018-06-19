@@ -10,4 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
+CPP = clang++
 
+FLAGS = -Wall -Werror -Wextra
+
+NAME = 	phonebook
+
+SRC = 	Contact.class.cpp \
+		main.cpp	\
+
+OBJ = 	$(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CPP) $(FLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp
+	$(CPP) $(FLAGS) -o $@ -c $<
+
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
